@@ -7,13 +7,15 @@ export default function Login() {
 
   const handleSubmit = async (formData) => {
     try {
-      const response = await axios.post("http://localhost:8000/api/login/", {
+      const response = await axios.post("http://127.0.0.1:8000/accounts/login/", {
         username: formData.username,
         password: formData.password,
       });
 
-      localStorage.setItem("token", response.data.access);
-      navigate("/dashboard");
+      if (response.status === 200) {
+        alert("Login successful!");
+        navigate("/");
+      }
     } catch (error) {
       console.error("Login error:", error);
       alert(error.response?.data?.detail || "Login failed. Please try again.");

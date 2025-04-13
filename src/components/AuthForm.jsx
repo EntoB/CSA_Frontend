@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaUser, FaLock, FaPhone, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaUser, FaLock, FaPhone, FaEye, FaEyeSlash ,FaKey } from "react-icons/fa";
 
 export default function AuthForm({ type, onSubmit }) {
   const [formData, setFormData] = useState({
+    registration_key: "", 
     username: "",
     ...(type === "signup" && { phone_number: "" }),
+    ...(type === "signup" && { registration_key: "" }), 
     password: "",
     agreeTerms: type === "signup",
   });
@@ -55,6 +57,21 @@ export default function AuthForm({ type, onSubmit }) {
               required
             />
           </div>
+
+          {/* Registration Key Field (Signup only) */}
+          {type === "signup" && (
+            <div className="form-group with-icon">
+              <FaKey className="input-icon" />
+              <input
+                type="text"
+                name="registration_key"
+                value={formData.registration_key}
+                onChange={handleChange}
+                placeholder="Registration Key"
+                required
+              />
+            </div>
+          )}
 
           {/* Phone Number Field with Icon (Signup only) */}
           {type === "signup" && (
