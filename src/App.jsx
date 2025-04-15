@@ -4,25 +4,26 @@ import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
 import Home from "./components/Home";
 import Layout from "./components/Layout";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 export default function App() {
   return (
     <Routes>
       {/* Public Routes */}
+      <Route path="/" element={<Navbar />} />
+
+      {/* Main Layout with Navbar */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
 
         {/* Protected Route - Only accessible when logged in */}
-        <Route
-          path="dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="dashboard" element  ={<Dashboard />} />
 
         {/* Catch-all route for 404 */}
         <Route path="*" element={<NotFound />} />
