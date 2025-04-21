@@ -13,16 +13,22 @@ export default function SignUp() {
         alert("Please enter a valid phone number (10-15 digits)");
         return;
       }
-
-      const response = await axios.post("http://localhost:8000/api/register/", {
+      console.log("Form Data:", formData); // Log the form data for debugging
+      const response = await axios.post("http://127.0.0.1:8000/accounts/register/", {
         username: formData.username,
+        registration_key: formData.registration_key,
         phone_number: formData.phone_number,
         password: formData.password,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
 
       if (response.status === 201) {
-        navigate("/login");
         alert("Registration successful! Please login.");
+        navigate("/login");
       }
     } catch (error) {
       console.error("Registration error:", error);

@@ -5,8 +5,10 @@ import farmerImage from "../assets/farmer-image.jpg"; // Replace with your actua
 
 export default function AuthForm({ type, onSubmit }) {
   const [formData, setFormData] = useState({
+    registration_key: "", 
     username: "",
     ...(type === "signup" && { phone_number: "" }),
+    ...(type === "signup" && { registration_key: "" }), 
     password: "",
     agreeTerms: type === "signup",
   });
