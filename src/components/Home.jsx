@@ -29,7 +29,7 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Empowering Farmers Through Cooperation</h1>
+          <h1>Afran Qalloo Farmers' Cooperative Union</h1>
           <p className="subtitle">Join our network of 5,000+ farmers getting better prices and sustainable solutions</p>
           <div className="cta-buttons">
             <button className="primary-btn">Join Our Cooperative</button>

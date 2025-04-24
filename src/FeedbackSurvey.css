@@ -1,0 +1,284 @@
+/* Feedback Survey Styles */
+.feedback-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .feedback-container.thank-you {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .thank-you-content {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .success-icon {
+    font-size: 4rem;
+    color: #2c8a4a;
+    margin-bottom: 1.5rem;
+  }
+  
+  .survey-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .survey-header h1 {
+    color: #2c8a4a;
+    margin-bottom: 0.5rem;
+  }
+  
+  .survey-header p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #2c8a4a;
+    transition: width 0.3s ease;
+  }
+  
+  .form-step {
+    padding: 1rem;
+  }
+  
+  .form-step h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .service-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .service-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .service-option:hover {
+    border-color: #2c8a4a;
+    background-color: #f8f9fa;
+  }
+  
+  .service-option input {
+    display: none;
+  }
+  
+  .custom-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+  
+  .service-option input:checked + .custom-radio {
+    border-color: #2c8a4a;
+    background-color: #2c8a4a;
+  }
+  
+  .service-option input:checked + .custom-radio::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  .rating-container {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .star {
+    font-size: 2.5rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .star.filled {
+    color: #ffc107;
+  }
+  
+  .rating-labels {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  
+  .emoji-feedback {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .emoji-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+  }
+  
+  .emoji-option.active {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  .emoji-option svg {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .emoji-option span {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .form-group input[type="text"],
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #2c8a4a;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  
+  .next-btn,
+  .back-btn,
+  .submit-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .next-btn,
+  .submit-btn {
+    background-color: #2c8a4a;
+    color: white;
+  }
+  
+  .next-btn:hover,
+  .submit-btn:hover {
+    background-color: #1e6b38;
+  }
+  
+  .next-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .back-btn {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .back-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .feedback-container {
+      padding: 1rem;
+      margin: 1rem;
+    }
+  
+    .emoji-feedback {
+      gap: 1rem;
+    }
+  
+    .radio-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }

@@ -7,7 +7,7 @@ import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Feedback from "./components/Feedback";
+import FeedbackSurvey from "./components/FeedbackSurvey";
 
 export default function App() {
   return (
@@ -22,10 +22,10 @@ export default function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="Feedback" element={<FeedbackSurvey />} />
 
         {/* Protected Route - Only accessible when logged in */}
         <Route path="dashboard" element  ={<Dashboard />} />
-        <Route path="feedback" element={<Feedback />} />
 
         {/* Catch-all route for 404 */}
         <Route path="*" element={<NotFound />} />
