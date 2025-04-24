@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaUser, FaLock, FaPhone, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaUser, FaLock, FaPhone, FaEye, FaEyeSlash, FaKey } from "react-icons/fa";
 import farmerImage from "../assets/farmer-image.jpg"; // Replace with your actual image path
 
 export default function AuthForm({ type, onSubmit }) {
   const [formData, setFormData] = useState({
-    registration_key: "", 
+    registration_key: "",
     username: "",
     ...(type === "signup" && { phone_number: "" }),
-    ...(type === "signup" && { registration_key: "" }), 
+    ...(type === "signup" && { registration_key: "" }),
     password: "",
     agreeTerms: type === "signup",
   });
@@ -38,13 +38,13 @@ export default function AuthForm({ type, onSubmit }) {
       {/* Right side with form */}
       <div className="auth-form-side">
         <div className="auth-card">
-        <div className={`auth-header ${type === "login" ? "login-heading" : "signup-heading"}`}>
-          <h2>{type === "login" ? "Welcome Back👏👏👏" : "Join Our Community"}</h2>
-          <p>
-            {type === "login" 
-              ? "Sign in to access your account" 
-              : "Create an account to get started"}
-          </p>
+          <div className={`auth-header ${type === "login" ? "login-heading" : "signup-heading"}`}>
+            <h2>{type === "login" ? "Welcome Back👏👏👏" : "Join Our Community"}</h2>
+            <p>
+              {type === "login"
+                ? "Sign in to access your account"
+                : "Create an account to get started"}
+            </p>
           </div>
 
           <form
@@ -65,6 +65,21 @@ export default function AuthForm({ type, onSubmit }) {
                 required
               />
             </div>
+
+            {/* Registration Key Field (Signup only) */}
+            {type === "signup" && (
+              <div className="form-group with-icon">
+                <FaKey className="input-icon" />
+                <input
+                  type="text"
+                  name="registration_key"
+                  value={formData.registration_key}
+                  onChange={handleChange}
+                  placeholder="Registration Key"
+                  required
+                />
+              </div>
+            )}
 
             {/* Phone Number Field with Icon (Signup only) */}
             {type === "signup" && (
@@ -93,7 +108,7 @@ export default function AuthForm({ type, onSubmit }) {
                 onChange={handleChange}
                 placeholder="Password"
                 required
-                minLength="6"
+              // minLength="6"
               />
               <button
                 type="button"
