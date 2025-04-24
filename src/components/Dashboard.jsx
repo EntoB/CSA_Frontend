@@ -36,13 +36,16 @@ const SystemManager = () => {
 
     try {
       setLoading(true);
+
+
       setError(null);
 
-      const response = await axios.post('/api/services/add/', newService, {
+      // Send the request with the sessionid in the headers
+      const response = await axios.post('http://127.0.0.1:8000/feedback/add-service/', newService, {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
+        },
+        withCredentials: true, // Ensure cookies are sent with the request
       });
 
       if (response.data && response.data.service_id) {
